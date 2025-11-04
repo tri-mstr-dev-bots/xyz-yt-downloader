@@ -1,0 +1,79 @@
+/* Add these new styles to your existing CSS */
+
+.source-badge {
+    background: #6c757d;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.download-link-direct {
+    background: #28a745 !important;
+}
+
+.download-link-external {
+    background: #ffc107 !important;
+    color: #212529 !important;
+}
+
+.download-link-external:hover {
+    background: #e0a800 !important;
+}
+
+.alternatives-section {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-left: 4px solid #17a2b8;
+}
+
+.alternatives-section h4 {
+    color: #17a2b8;
+    margin-bottom: 15px;
+}
+
+.alternative-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.alt-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 200px;
+}
+
+.y2mate-btn {
+    background: linear-gradient(135deg, #ff0000, #cc0000);
+    color: white;
+}
+
+.alternative-btn {
+    background: linear-gradient(135deg, #17a2b8, #138496);
+    color: white;
+}
+
+.alt-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .alternative-buttons {
+        flex-direction: column;
+    }
+    
+    .alt-btn {
+        min-width: 100%;
+    }
+  }

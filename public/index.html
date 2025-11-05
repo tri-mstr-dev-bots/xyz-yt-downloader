@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XYZ YT Downloader - Download YouTube Videos & Audio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fab fa-youtube"></i> XYZ YT Downloader</h1>
+            <p>Download YouTube Videos & Audio in High Quality - Direct from Our Server</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Search Section -->
+            <div class="search-section">
+                <h3>Search YouTube Videos</h3>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Enter video name to search...">
+                    <button onclick="searchVideos()" id="searchBtn">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                </div>
+            </div>
+
+            <!-- Search Results -->
+            <div id="searchResults" class="search-results" style="display: none;">
+                <h3>Search Results</h3>
+                <div id="searchResultsList" class="search-results-list"></div>
+            </div>
+
+            <!-- OR Divider -->
+            <div class="divider">
+                <span>OR</span>
+            </div>
+
+            <!-- URL Section -->
+            <div class="url-section">
+                <h3>Paste YouTube URL</h3>
+                <div class="url-box">
+                    <input type="text" id="videoUrl" placeholder="https://www.youtube.com/watch?v=...">
+                    <button onclick="getDownloadLinks()" id="downloadBtn">
+                        <i class="fas fa-download"></i> Get Download Links
+                    </button>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div id="results" class="results-section" style="display: none;">
+                <h3>Download Options</h3>
+                <div id="videoInfo" class="video-info"></div>
+                <div id="downloadOptions" class="download-options"></div>
+            </div>
+
+            <!-- Loading -->
+            <div id="loading" class="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Processing your request...</p>
+            </div>
+
+            <!-- Error Message -->
+            <div id="error" class="error-message" style="display: none;"></div>
+
+            <!-- Features Section -->
+            <div class="features-section">
+                <h3>🌟 Why Choose XYZ YT Downloader?</h3>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-bolt"></i>
+                        <h4>Fast Download</h4>
+                        <p>High-speed downloads directly from our server</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>No Redirects</h4>
+                        <p>Download directly without visiting other websites</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h4>All Devices</h4>
+                        <p>Works perfectly on mobile, tablet and desktop</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-cloud-download-alt"></i>
+                        <h4>Multiple Qualities</h4>
+                        <p>Choose from various video and audio formats</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How to Use Section -->
+            <div class="instructions-section">
+                <h3>📖 How to Use</h3>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Search or Paste URL</h4>
+                            <p>Search for videos or paste YouTube URL directly</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Get Download Links</h4>
+                            <p>Click the button to see available formats</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Download Directly</h4>
+                            <p>Click download button - file will save directly to your device</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>XYZ YT Downloader</h4>
+                    <p>The fastest and most reliable YouTube downloader</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Features</h4>
+                    <ul>
+                        <li>Video Download</li>
+                        <li>Audio Download</li>
+                        <li>Multiple Qualities</li>
+                        <li>No Ads</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li>Help Center</li>
+                        <li>Contact Us</li>
+                        <li>Report Issue</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 XYZ YT Downloader. All rights reserved.</p>
+                <p class="disclaimer">This tool is for educational purposes only. Please respect copyright laws and YouTube's Terms of Service.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+And here's the updated CSS to support the new sections:
+
+```css
+/* Add these to your existing style.css */
+
+.features-section {
+    margin-top: 50px;
+    padding: 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    color: white;
+}
+
+.features-section h3 {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8em;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card i {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: #ffd700;
+}
+
+.feature-card h4 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.feature-card p {
+    opacity: 0.9;
+    font-size: 0.9em;
+}
+
+.instructions-section {
+    margin-top: 40px;
+    padding: 30px;
+    background: #f8f9fa;
+    border-radius: 15px;
+}
+
+.instructions-section h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    flex: 1;
+    min-width: 250px;
+}
+
+.step-number {
+    background: linear-gradient(135deg, #ff0000, #cc0000);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    flex-shrink: 0;
+}
+
+.step-content h4 {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.step-content p {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.footer-section h4 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li:hover {
+    color: #ff0000;
+}
+
+.footer-bottom {
+    border-top: 1px solid #e9ecef;
+    padding-top: 20px;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .steps {
+        flex-direction: column;
+    }
+    
+    .step {
+        min-width: 100%;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .features-section,
+    .instructions-section {
+        padding: 20px;
+    }
+    
+    .feature-card {
+        padding: 20px;
+    }
+}
